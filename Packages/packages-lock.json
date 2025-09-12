@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.unity.inputsystem": {
+      "version": "1.11.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.multiplayer.center": {
       "version": "1.0.0",
       "depth": 0,
@@ -8,32 +17,24 @@
         "com.unity.modules.uielements": "1.0.0"
       }
     },
-    "com.unity.nuget.newtonsoft-json": {
-      "version": "3.2.1",
+    "com.unity.ugui": {
+      "version": "1.0.0",
       "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "sh.orels.shaders": {
-      "version": "file:sh.orels.shaders",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
-    "sh.orels.shaders.generator": {
-      "version": "file:sh.orels.shaders.generator",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
-    "sh.orels.shaders.inspector": {
-      "version": "file:sh.orels.shaders.inspector",
-      "depth": 0,
-      "source": "embedded",
+      "source": "builtin",
       "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "2.0.2"
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.unity.visualscripting": {
+      "version": "1.9.8",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
