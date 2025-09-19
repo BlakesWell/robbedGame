@@ -7,9 +7,16 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
  // Speed at which the player moves.
- public float speed = 2f; 
+ private float speed = 2f;
+ public float normSpeed = 2f;
+ public float runSpeed = 3f;
  public float turnSpeed = 45f;
 
+  public GameObject body;
+ private bool crouched = false;
+
+ public Material laserMaterial;
+ 
  // Start is called before the first frame update.
  void Start()
     {
@@ -23,10 +30,53 @@ public class PlayerController : MonoBehaviour
    }
 
  // FixedUpdate is called once per fixed frame-rate frame.
- private void FixedUpdate() 
+void FixedUpdate() 
     {
       var velocity = Vector3.forward * Input.GetAxis("Vertical") * speed;
       transform.Translate(velocity * Time.deltaTime);
-      transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
+      transform.Rotate(Vector3.down, Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
+
+      if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift)) 
+      {
+			  speed = runSpeed;
+      } 
+      else 
+      {
+        speed = normSpeed;
+      }
+
+      if(Input.GetKey(KeyCode.LeftControl))
+      {
+        bool wait = false;
+        if(!wait)
+        {
+          if(!crouched)
+          {
+            crouched = true;
+            body.transform.localScale -= new Vector3(0, 1f, 0);
+          }
+          else
+          {
+            crouched = false;
+            body.transform.localScale += new Vector3(0, 1f, 0);
+          }
+        }
+      }
+
     }
+ 
+ void OnTriggerEvent(Collider laserEvent)
+  {
+
+    laserEvent.gameObject.SetActive(false);
+
+      if(laserEvent.gameObject.CompareTag("laser"))
+      {
+          Color color = laserMaterial.color; // Get current color
+          color.a = 1f;                      // Set alpha to 1
+          laserMaterial.color = color;         // Set alpha to 1 (fully opaque)
+      }
+  }
+  
+
 }
