@@ -119,6 +119,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &52438617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5918880160836514745, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
+  m_PrefabInstance: {fileID: 6071087958715368257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &52438621
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52438617}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0612452, y: 6.716579, z: 2.2057693}
+  m_Center: {x: 0.017637609, y: 2.2313325, z: 0.03525567}
+--- !u!54 &52438622
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52438617}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &56894904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -977,7 +1030,7 @@ GameObject:
   m_Layer: 0
   m_Name: lasers
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1015,7 +1068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b900904394ef114d8f0ea0f5c5e8ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserMaterial: {fileID: 0}
 --- !u!1001 &1822793284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1391,7 +1443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6693736949041599772, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -35.315582
+      value: -58.85
       objectReference: {fileID: 0}
     - target: {fileID: 6693736949041599772, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1422,6 +1474,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8067750399670333481, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 52438617}
+    - target: {fileID: 8067750399670333481, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
       propertyPath: runSpeed
       value: 15
       objectReference: {fileID: 0}
@@ -1429,10 +1485,24 @@ PrefabInstance:
       propertyPath: normSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8067750399670333481, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
+      propertyPath: lasersParent
+      value: 
+      objectReference: {fileID: 1819506866}
+    - target: {fileID: 8067750399670333481, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
+      propertyPath: laserMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 598c4ead70acb7641be5377e89070575, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5918880160836514745, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 52438621}
+    - targetCorrespondingSourceObject: {fileID: 5918880160836514745, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 52438622}
   m_SourcePrefab: {fileID: 100100000, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
  public Material laserMaterial;
  
+    public GameObject lasersParent;
+
  // Start is called before the first frame update.
  void Start()
     {
@@ -65,17 +67,28 @@ void FixedUpdate()
 
     }
  
- void OnTriggerEvent(Collider laserEvent)
+ void OnTriggerEnter(Collider laserEvent)
   {
 
-    laserEvent.gameObject.SetActive(false);
+    
 
-      if(laserEvent.gameObject.CompareTag("laser"))
+    if(laserEvent.gameObject.CompareTag("laser")) //if object is laser
+    {
+      foreach (Transform child in lasersParent.transform)// for each laser
       {
-          Color color = laserMaterial.color; // Get current color
-          color.a = 1f;                      // Set alpha to 1
-          laserMaterial.color = color;         // Set alpha to 1 (fully opaque)
+        child.gameObject.SetActive(false);
+        Renderer renderer = child.GetComponent<Renderer>();
+        if (renderer != null)//if has renderer
+        {
+            Material mat = renderer.material; // Unique instance for each laser
+            Color color = mat.color;
+            color.a = 0; // Set to desired transparency
+            mat.color = color;
+        }
+        
       }
+    }
+      
   }
   
 
