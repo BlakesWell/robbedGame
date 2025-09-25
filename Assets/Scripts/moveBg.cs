@@ -40,12 +40,12 @@ public class moveBg : MonoBehaviour
                 Debug.Log("1 should tp back");
                 treeSection1.transform.position = new Vector3(0,10,-550);
             }
-            else if(treeSection2.transform.position.z >= 200)
+            else if(treeSection2.transform.position.z >= 250)
             {
                 Debug.Log("2 should tp back");
                 treeSection2.transform.position = new Vector3(0,10,-400);
             }
-            else if(treeSection3.transform.position.z >= 500)
+            else if(treeSection3.transform.position.z >= 515)
             {
                 Debug.Log("3 should tp back");
                 treeSection3.transform.position = new Vector3(0,10,-200);
