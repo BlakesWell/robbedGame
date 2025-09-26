@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class pickUpHammer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public GameObject playerObj;
+
+    void OnTriggerEnter(Collider maybeHammer)
     {
-        
+        if(maybeHammer.gameObject.CompareTag("hammer")) //if object is hammer
+        {
+            print("should pickup");
+            GameObject hammer = Instantiate(maybeHammer.gameObject);
+            hammer.tag = "hammerPickedUp";
+            Destroy(maybeHammer.gameObject);
+
+            hammer.transform.parent = playerObj.transform;
+        }
     }
 }

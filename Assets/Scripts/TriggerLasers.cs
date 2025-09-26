@@ -3,9 +3,7 @@ using UnityEngine;
 public class TriggerLasers : MonoBehaviour
 {
     public Material laserMaterial;
- 
     public GameObject lasersParent;
-
 
     void OnTriggerEnter(Collider laserEvent)
     {
