@@ -8,6 +8,7 @@ TagManager:
   - hammer
   - hammerPickedUp
   - glass
+  - player
   layers:
   - Default
   - TransparentFX

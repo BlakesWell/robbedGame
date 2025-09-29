@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
    }
 
  // FixedUpdate is called once per fixed frame-rate frame.
-void FixedUpdate() 
+/*void FixedUpdate() 
     {
       var velocity = Vector3.forward * Input.GetAxis("Vertical") * speed;
       transform.Translate(velocity * Time.deltaTime);
@@ -62,5 +62,17 @@ void FixedUpdate()
           }
         }
       }
+    }*/
+
+    void Update()
+    {
+      float horizontalInput = Input.GetAxis("Horizontal");
+      float verticalInput = Input.GetAxis("Vertical");
+
+      Vector3 moveDirection = transform.right * horizontalInput + transform.forward * verticalInput;
+      moveDirection.Normalize();
+
+      PlayerController.Move(moveDirection * speed * Time.deltaTime);
+
     }
 }
