@@ -1,36 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
- // Speed at which the player moves.
- private float speed = 2f;
- public float normSpeed = 2f;
- public float runSpeed = 3f;
- public float turnSpeed = 45f;
+  public float moveSpeed = 5f;
+  public float gravity = -9.81f;
+  public float jumpHeight = 2f;
 
-  public GameObject body;
- private bool crouched = false;
+  public float turnSpeed = 100f;
+  
+  public float controllerHeight = 2f; // Set this to your player's height
+  public Vector3 controllerCenter = new Vector3(0, 1f, 0); // Y should be half of height
 
- 
+  private CharacterController characterController;
+  private Vector3 velocity;
+  private bool isGrounded;
 
- // Start is called before the first frame update.
- void Start()
+  void Start()
+  {
+    characterController = GetComponent<CharacterController>();
+    characterController.height = controllerHeight;
+    characterController.center = controllerCenter;
+  }
+
+  void Update()
+  {
+    //transform.Rotate(Vector3.down, Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
+
+    isGrounded = characterController.isGrounded;
+
+    if (isGrounded && velocity.y < 0)
     {
-
+      velocity.y = -2f;
     }
- 
- // This function is called when a move input is detected.
- void OnMove(InputValue movementValue)
-   {
 
-   }
+    float x = -Input.GetAxis("Horizontal");
+    float z = Input.GetAxis("Vertical");
 
- // FixedUpdate is called once per fixed frame-rate frame.
-/*void FixedUpdate() 
+    Vector3 move = transform.right * x + transform.forward * z;
+    characterController.Move(move * moveSpeed * Time.deltaTime);
+
+    if (Input.GetButtonDown("Jump") && isGrounded)
+    {
+      velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+    }
+
+    velocity.y += gravity * Time.deltaTime;
+    characterController.Move(velocity * Time.deltaTime);
+  }
+  /*void FixedUpdate() 
     {
       var velocity = Vector3.forward * Input.GetAxis("Vertical") * speed;
       transform.Translate(velocity * Time.deltaTime);
@@ -63,16 +80,4 @@ public class PlayerController : MonoBehaviour
         }
       }
     }*/
-
-    void Update()
-    {
-      float horizontalInput = Input.GetAxis("Horizontal");
-      float verticalInput = Input.GetAxis("Vertical");
-
-      Vector3 moveDirection = transform.right * horizontalInput + transform.forward * verticalInput;
-      moveDirection.Normalize();
-
-      PlayerController.Move(moveDirection * speed * Time.deltaTime);
-
-    }
 }
