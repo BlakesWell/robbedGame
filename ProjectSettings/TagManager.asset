@@ -9,6 +9,7 @@ TagManager:
   - hammerPickedUp
   - glass
   - player
+  - vault
   layers:
   - Default
   - TransparentFX
