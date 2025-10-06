@@ -24,19 +24,20 @@ public class PlayerMovement : MonoBehaviour
 
   void Update()
   {
-    //transform.Rotate(Vector3.down, Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
+    // Rotate the player around its Y axis when pressing A/D (Horizontal axis)
+    float horizontalInput = Input.GetAxis("Horizontal");
+    transform.Rotate(Vector3.up, -horizontalInput * turnSpeed * Time.deltaTime);
 
     isGrounded = characterController.isGrounded;
 
     if (isGrounded && velocity.y < 0)
     {
-      velocity.y = -2f;
+      //velocity.y = -2f;
     }
 
-    float x = -Input.GetAxis("Horizontal");
     float z = Input.GetAxis("Vertical");
 
-    Vector3 move = transform.right * x + transform.forward * z;
+    Vector3 move = transform.forward * z;
     characterController.Move(move * moveSpeed * Time.deltaTime);
 
     if (Input.GetButtonDown("Jump") && isGrounded)

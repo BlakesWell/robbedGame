@@ -5,6 +5,8 @@ public class TriggerLasers : MonoBehaviour
     public Material laserMaterial;
     public GameObject lasersParent;
 
+    public GameObject light;
+
     void OnTriggerEnter(Collider laserEvent)
     {
         if(laserEvent.gameObject.CompareTag("laser")) //if object is laser
@@ -21,6 +23,10 @@ public class TriggerLasers : MonoBehaviour
                     mat.color = color;
                 }
             }
+
+            light.GetComponent<Light>().enabled = true;
+
+
         }
     }
 }
