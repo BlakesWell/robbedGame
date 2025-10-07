@@ -1,15 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class nextLevel : MonoBehaviour
+public class restartGame : MonoBehaviour
 {
     void OnTriggerEnter(Collider maybePlayer)
     {
         if(maybePlayer.gameObject.CompareTag("player")) //if player touches this block
         {
-            print("should progress level");
+            print("should restart game");
             //Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(0);
         }
     }
 }
