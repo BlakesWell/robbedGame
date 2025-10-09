@@ -25,7 +25,7 @@ public class TriggerLasers : MonoBehaviour
             }
 
             light.GetComponent<Light>().enabled = true;
-
+            light.GetComponent<AudioSource>().enabled = true;
 
         }
     }

@@ -6,6 +6,8 @@ public class explodeVault : MonoBehaviour
     public GameObject cam1;
     public GameObject cam2;
 
+    public GameObject particle;
+
     async void OnTriggerEnter(Collider maybeVault)
     {
         if(maybeVault.gameObject.CompareTag("vault")) //if object is glass
@@ -13,6 +15,8 @@ public class explodeVault : MonoBehaviour
             print("should explode vault");
             Destroy(maybeVault.gameObject);
             Destroy(gameObject);
+
+            particle.SetActive(true);
 
             await System.Threading.Tasks.Task.Delay(1000);
 
