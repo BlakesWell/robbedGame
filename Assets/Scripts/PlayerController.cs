@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour
   void Start()
   {
     characterController = GetComponent<CharacterController>();
-    characterController.height = controllerHeight;
-    characterController.center = controllerCenter;
+    //characterController.height = controllerHeight;
+    //characterController.center = controllerCenter;
   }
 
   void Update()
@@ -32,13 +32,23 @@ public class PlayerMovement : MonoBehaviour
 
     if (isGrounded && velocity.y < 0)
     {
-      //velocity.y = -2f;
+      velocity.y = -2f;
     }
 
     float z = Input.GetAxis("Vertical");
 
+    // Reverse the direction so W moves forward and S moves backward
+    z = -z;
+
+    // Running logic
+    float currentSpeed = moveSpeed;
+    if (Input.GetKey(KeyCode.LeftShift))
+    {
+      currentSpeed *= 2f; // Double the speed when running
+    }
+
     Vector3 move = transform.forward * z;
-    characterController.Move(move * moveSpeed * Time.deltaTime);
+    characterController.Move(move * currentSpeed * Time.deltaTime);
 
     if (Input.GetButtonDown("Jump") && isGrounded)
     {
