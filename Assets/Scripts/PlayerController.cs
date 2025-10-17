@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
   public float moveSpeed = 5f;
   public float gravity = -9.81f;
@@ -18,15 +18,13 @@ public class PlayerMovement : MonoBehaviour
   void Start()
   {
     characterController = GetComponent<CharacterController>();
-    //characterController.height = controllerHeight;
-    //characterController.center = controllerCenter;
   }
 
   void Update()
   {
     // Rotate the player around its Y axis when pressing A/D (Horizontal axis)
     float horizontalInput = Input.GetAxis("Horizontal");
-    transform.Rotate(Vector3.up, -horizontalInput * turnSpeed * Time.deltaTime);
+    transform.Rotate(Vector3.up, horizontalInput * turnSpeed * Time.deltaTime);
 
     isGrounded = characterController.isGrounded;
 
@@ -36,9 +34,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     float z = Input.GetAxis("Vertical");
-
-    // Reverse the direction so W moves forward and S moves backward
-    z = -z;
 
     // Running logic
     float currentSpeed = moveSpeed;

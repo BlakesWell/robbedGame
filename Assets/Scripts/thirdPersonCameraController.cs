@@ -1,9 +1,9 @@
     using UnityEngine;
-    using Cinemachine;
+//    using Cinemachine;
 
     public class ThirdPersonCinemachineController : MonoBehaviour
     {
-        public Transform followTarget; // The object the camera should follow (e.g., your player)
+       /* public Transform followTarget; // The object the camera should follow (e.g., your player)
         public CinemachineVirtualCamera cinemachineCamera; // Reference to your Cinemachine Camera
         public float rotationSpeed = 5f;
         public float verticalLookSpeed = 3f;
@@ -54,5 +54,5 @@
 
             // Apply vertical rotation to the Cinemachine Camera
             cinemachineCamera.transform.localRotation = Quaternion.Euler(currentPitch, 0, 0);
-        }
+        }*/
     }
