@@ -32,7 +32,7 @@ public class Path : MonoBehaviour
     {
         index += direction;
 
-        if(pathType == Pathtype.Loop)
+        if(pathType == PathType.Loop)
         {
             index %= waypoints.Length;
         }

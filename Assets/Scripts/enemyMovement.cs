@@ -31,9 +31,9 @@ public class enemyMovement : MonoBehaviour
         if(distance < 30 && !seen)
         {
             seen = true;
-            nma.SetDestination(player.position);
+            nma.destination = player.position;
         }
-        else
+        else if(!seen)
         {
             if(nma.remainingDistance <= 0.1f)
             {
@@ -44,6 +44,10 @@ public class enemyMovement : MonoBehaviour
                     nma.destination = path.GetNextWaypoint();
                 }
             }
+        }
+        else
+        {
+            nma.destination = player.position;
         }
     }
 
