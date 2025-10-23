@@ -20,17 +20,19 @@ public class enemyMovement : MonoBehaviour
     void Start()
     {
         nma = GetComponent<NavMeshAgent>();
-        nma.destination = path.GetCurrentWayPoint();
+        if(path)
+        {
+            nma.destination = path.GetCurrentWayPoint();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        distance = Vector3.Distance(this.transform.position, player.position);
+        //distance = Vector3.Distance(this.transform.position, player.position);
 
-        if(distance < 30 && !seen)
+        if(seen)
         {
-            seen = true;
             nma.destination = player.position;
         }
         else if(!seen)
@@ -44,10 +46,6 @@ public class enemyMovement : MonoBehaviour
                     nma.destination = path.GetNextWaypoint();
                 }
             }
-        }
-        else
-        {
-            nma.destination = player.position;
         }
     }
 
