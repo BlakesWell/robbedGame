@@ -54,7 +54,7 @@ public class enemyMovement : MonoBehaviour
         if(maybePlayer.gameObject.CompareTag("player")) //if player touches this block
         {
             print("should kill player");
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(6);
         }
     }
 
