@@ -2583,6 +2583,7 @@ GameObject:
   - component: {fileID: 1466426807}
   - component: {fileID: 1466426806}
   - component: {fileID: 1466426805}
+  - component: {fileID: 1466426808}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2664,6 +2665,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -4.647, y: 124.953, z: 0.647}
+--- !u!95 &1466426808
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466426804}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3682e033fa1f5754a961f4273269dc32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1503657749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8265909692457983702, guid: 3c023ee8c09dd6f40af52c3f91a979c2, type: 3}
@@ -3148,6 +3171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923f8a606fe69264ea41eb3e7854c49f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animated: {fileID: 1466426804}
 --- !u!1 &1838676788
 GameObject:
   m_ObjectHideFlags: 0
