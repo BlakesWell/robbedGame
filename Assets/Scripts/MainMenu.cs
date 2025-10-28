@@ -5,17 +5,21 @@ using System.Threading;
 public class MainMenu : MonoBehaviour
 {
     public GameObject animated;
+    public GameObject animatedUI1;
+    public GameObject animatedUI2;
+    
     async void delayAnim()
     {
-        await System.Threading.Tasks.Task.Delay(5000);
+        animated.GetComponent<Animator>().enabled = true;
+        animatedUI1.GetComponent<Animator>().enabled = true;
+        animatedUI2.GetComponent<Animator>().enabled = true;
+
+        await System.Threading.Tasks.Task.Delay(2900);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void PlayGame()
     {
-        animated.GetComponent<Animator>().enabled = true;
-
         delayAnim();
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
 }
