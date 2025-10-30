@@ -7,7 +7,7 @@ public class cutDownSceneCam : MonoBehaviour
     {
         this.GetComponent<Animator>().enabled = true;
 
-        await System.Threading.Tasks.Task.Delay(2999);
+        await System.Threading.Tasks.Task.Delay(2900);
 
         thirdPersonCam.GetComponent<Camera>().enabled = true;
         this.GetComponent<Camera>().enabled = false;
