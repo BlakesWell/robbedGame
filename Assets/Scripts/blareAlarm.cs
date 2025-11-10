@@ -3,20 +3,18 @@ using UnityEngine;
 public class blareAlarm : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    async void Start()
+    void Start()
     {
-        while(true)
+        StartCoroutine(AlarmCoroutine());
+    }
+
+    private System.Collections.IEnumerator AlarmCoroutine()
+    {
+        var light = this.GetComponent<Light>();
+        while (true)
         {
-            if(this.GetComponent<Light>().enabled == false)
-            {
-                await System.Threading.Tasks.Task.Delay(1000);
-                this.GetComponent<Light>().enabled = true;
-            }
-            else
-            {
-                await System.Threading.Tasks.Task.Delay(1000);
-                this.GetComponent<Light>().enabled = false;
-            }
+            light.enabled = !light.enabled;
+            yield return new WaitForSeconds(1f);
         }
     }
 }

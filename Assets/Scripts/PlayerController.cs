@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     float currentSpeed = moveSpeed;
     if (Input.GetKey(KeyCode.LeftShift))
     {
-      currentSpeed *= 2f; // Double the speed when running
+      currentSpeed += (int)(currentSpeed * .5); // Double the speed when running
     }
 
     Vector3 move = transform.forward * z;
