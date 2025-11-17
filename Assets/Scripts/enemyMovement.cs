@@ -11,6 +11,11 @@ public class enemyMovement : MonoBehaviour
     private NavMeshAgent nma;
     public float distance;
 
+    private Vector3 lastPosition;
+    public float currentSpeed;
+
+    public GameObject animatedEnemy;
+
     [SerializeField] float waitTimeOnWayPoint = 1f;
     [SerializeField] Path path;
 
@@ -24,16 +29,29 @@ public class enemyMovement : MonoBehaviour
         {
             nma.destination = path.GetCurrentWayPoint();
         }
+
+        lastPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //distance = Vector3.Distance(this.transform.position, player.position);
+        float distanceMoved = Vector3.Distance(transform.position, lastPosition);
+        currentSpeed = distanceMoved/Time.deltaTime;
+
+        if(currentSpeed != 0)
+        {
+            animatedEnemy.GetComponent<Animator>().SetInteger("Mode", 1);
+        }
+        else
+        {
+            animatedEnemy.GetComponent<Animator>().SetInteger("Mode", 0);
+        }
 
         if(seen)
         {
             nma.destination = player.position;
+            animatedEnemy.GetComponent<Animator>().SetInteger("Mode", 2);
         }
         else if(!seen)
         {
@@ -47,6 +65,8 @@ public class enemyMovement : MonoBehaviour
                 }
             }
         }
+
+        lastPosition = transform.position;
     }
 
     void OnTriggerEnter(Collider maybePlayer)

@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &9339356 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4228255394053018862, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
-  m_PrefabInstance: {fileID: 1835146112}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &35161311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -862,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18857fe08594ea34193868114331ff25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 9339356}
+  player: {fileID: 1835146113}
 --- !u!1001 &318617118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4345,6 +4340,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 323897111}
   m_SourcePrefab: {fileID: 100100000, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
+--- !u!4 &1835146113 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6693736949041599772, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
+  m_PrefabInstance: {fileID: 1835146112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1849810913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2051327050706281498, guid: 18e41d1bfbe5efe44a6eb1b7efbf6f28, type: 3}
