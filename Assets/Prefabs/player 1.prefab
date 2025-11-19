@@ -499,6 +499,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 35.136173
       objectReference: {fileID: 0}
+    - target: {fileID: 5546139753558182720, guid: 9b6e55697a9f9414997224882e1de808, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dca88a10b0d9f9c469d9ac9a28407776, type: 2}
+    - target: {fileID: 5546139753558182720, guid: 9b6e55697a9f9414997224882e1de808, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9238303fc38265c47bcef41230f8f59d, type: 2}
+    - target: {fileID: 5546139753558182720, guid: 9b6e55697a9f9414997224882e1de808, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f2a1d514ae502d744ac1e629fcac361d, type: 2}
+    - target: {fileID: 5546139753558182720, guid: 9b6e55697a9f9414997224882e1de808, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 901f8e5a7c753d5428feaa12e436237c, type: 2}
+    - target: {fileID: 5546139753558182720, guid: 9b6e55697a9f9414997224882e1de808, type: 3}
+      propertyPath: 'm_Materials.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1233abef2e95446409284422b0c6740f, type: 2}
+    - target: {fileID: 5546139753558182720, guid: 9b6e55697a9f9414997224882e1de808, type: 3}
+      propertyPath: 'm_Materials.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c08598e2d215ef44a823d21ce64f1c8, type: 2}
+    - target: {fileID: 5546139753558182720, guid: 9b6e55697a9f9414997224882e1de808, type: 3}
+      propertyPath: 'm_Materials.Array.data[6]'
+      value: 
+      objectReference: {fileID: 2100000, guid: da7087c8beb71554d92eb9bb1a83ab61, type: 2}
     - target: {fileID: 5806271889679045151, guid: 9b6e55697a9f9414997224882e1de808, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -18.952274
