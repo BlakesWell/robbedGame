@@ -10,7 +10,7 @@ public class delayAnim : MonoBehaviour
         await System.Threading.Tasks.Task.Delay(500);
         this.GetComponent<Animator>().enabled = true;
         await System.Threading.Tasks.Task.Delay(2000);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     void Start()
     {
