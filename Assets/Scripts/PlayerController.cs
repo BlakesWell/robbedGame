@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,13 +16,57 @@ public class PlayerController : MonoBehaviour
   private Vector3 velocity;
   private bool isGrounded;
 
+  public AudioSource step1;
+  public AudioSource step2;
+
+  int stepNum = 0;
+  bool stepping = false;
+  
   void Start()
   {
     characterController = GetComponent<CharacterController>();
   }
 
+    System.Collections.IEnumerator step(float speed)
+    {
+      if(stepNum == 0 && !stepping)
+      {
+        stepping = true;
+        step1.time = 0.02f;
+        step1.Play();
+        yield return new WaitForSeconds(speed);
+        step1.Stop();
+        stepping = false;
+        stepNum = 1;
+      }
+      else
+      {
+        if(!stepping)
+        {
+          stepping = true;
+          step2.time = 0.02f;
+          step2.Play();
+          yield return new WaitForSeconds(speed);
+          step2.Stop();
+          stepping = false;
+          stepNum = 0;
+        }
+      }
+    }
+
   void Update()
   {
+    if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+    {
+      if(Input.GetKey(KeyCode.LeftShift))
+      {
+        StartCoroutine(step(.25f));
+      }
+      else
+      {
+        StartCoroutine(step(.4f));
+      }
+    }
     // Rotate the player around its Y axis when pressing A/D (Horizontal axis)
     float horizontalInput = Input.GetAxis("Horizontal");
     transform.Rotate(Vector3.up, horizontalInput * turnSpeed * Time.deltaTime);
@@ -53,37 +98,4 @@ public class PlayerController : MonoBehaviour
     velocity.y += gravity * Time.deltaTime;
     characterController.Move(velocity * Time.deltaTime);
   }
-  /*void FixedUpdate() 
-    {
-      var velocity = Vector3.forward * Input.GetAxis("Vertical") * speed;
-      transform.Translate(velocity * Time.deltaTime);
-      transform.Rotate(Vector3.down, Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
-
-      if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift)) 
-      {
-			  speed = runSpeed;
-      } 
-      else 
-      {
-        speed = normSpeed;
-      }
-
-      if(Input.GetKey(KeyCode.LeftControl))
-      {
-        bool wait = false;
-        if(!wait)
-        {
-          if(!crouched)
-          {
-            crouched = true;
-            body.transform.localScale -= new Vector3(0, 1f, 0);
-          }
-          else
-          {
-            crouched = false;
-            body.transform.localScale += new Vector3(0, 1f, 0);
-          }
-        }
-      }
-    }*/
 }
