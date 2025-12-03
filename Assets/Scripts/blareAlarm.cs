@@ -14,7 +14,7 @@ public class blareAlarm : MonoBehaviour
         while (true)
         {
             light.enabled = !light.enabled;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.635f);
         }
     }
 }

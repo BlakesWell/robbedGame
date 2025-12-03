@@ -2735,8 +2735,8 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: af4e7db7da7261f4a877ac588ac8c5f5, type: 3}
-  m_Resource: {fileID: 8300000, guid: af4e7db7da7261f4a877ac588ac8c5f5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2fd1a323b9f4e6144b108b8f0da50f57, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2fd1a323b9f4e6144b108b8f0da50f57, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3204,12 +3204,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 35115e7a03043234aabcac69fb02e029, type: 3}
-  m_Resource: {fileID: 8300000, guid: 35115e7a03043234aabcac69fb02e029, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 438d08ea6bcabd945a926bdc8edc6657, type: 3}
+  m_Resource: {fileID: 8300000, guid: 438d08ea6bcabd945a926bdc8edc6657, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.348
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4698,7 +4698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6693736949041599772, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -29.407
+      value: -25.17
       objectReference: {fileID: 0}
     - target: {fileID: 6693736949041599772, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4727,6 +4727,14 @@ PrefabInstance:
     - target: {fileID: 6693736949041599772, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910262995913560485, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574265455090080984, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8067750399670333481, guid: 6cd27aba1155fd84a875669798180fcc, type: 3}
       propertyPath: body
