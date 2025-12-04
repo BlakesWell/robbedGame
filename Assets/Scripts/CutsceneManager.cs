@@ -13,7 +13,9 @@ public class CutsceneManager : MonoBehaviour
         enemy.GetComponent<enemyMovement>().enabled = false;
         //player.GetComponent<Animator>().enabled = true;
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
+        enemy.GetComponent<AudioSource>().enabled = true;
+        yield return new WaitForSeconds(1.5f);
 
         enemy.GetComponent<Animator>().enabled = true;
         animEnemy.GetComponent<Animator>().SetInteger("Mode", 2);
@@ -24,6 +26,7 @@ public class CutsceneManager : MonoBehaviour
 
         enemy.GetComponent<enemyMovement>().enabled = true;
         enemy.GetComponent<Animator>().enabled = false;
+        
         animEnemy.GetComponent<Animator>().SetInteger("Mode", 0);
         
         player.GetComponent<Animator>().enabled = false;
