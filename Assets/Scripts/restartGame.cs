@@ -9,7 +9,7 @@ public class restartGame : MonoBehaviour
         {
             print("should restart game");
             //Destroy(gameObject);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(8);
         }
     }
 }
