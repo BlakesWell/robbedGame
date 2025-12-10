@@ -18,6 +18,8 @@ public class explodeVault : MonoBehaviour
 
             particle.SetActive(true);
 
+            particle.GetComponent<AudioSource>().Play();
+
             await System.Threading.Tasks.Task.Delay(1000);
 
             changeCameras();
